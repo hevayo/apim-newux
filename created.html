@@ -21,6 +21,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="http://cdn.jsdelivr.net/ace/1.1.8/min/ace.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -142,7 +143,54 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum convallis
 
     </div>
     <div class="tab-pane" id="lifecycle-r">Life Cycle.</div>
-    <div class="tab-pane" id="endpoints-r">Endpoints.</div>
+    <div class="tab-pane" id="endpoints-r">
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="selectbasic">Endpoint Type</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Production Endpoint</label>  
+  <div class="col-md-6">
+<div class="input-group">
+  <input type="text" class="form-control" aria-label="...">
+  <div class="input-group-btn">
+  <button type="button" class="btn btn-default">Advanced Options</button>
+  <button type="button" class="btn btn-default">Test</button>    
+  </div>
+</div>  <span class="help-block">E.g.: http://appserver/resource</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Sandbox Endpoint</label>  
+  <div class="col-md-6">
+<div class="input-group">
+  <input type="text" class="form-control" aria-label="...">
+  <div class="input-group-btn">
+  <button type="button" class="btn btn-default">Advanced Options</button>
+  <button type="button" class="btn btn-default">Test</button>    
+  </div>
+</div>  <span class="help-block">E.g.: http://appserver/resource</span>  
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+    </div>
 
 <div class="tab-pane" id="resources-r">
 <button type="button" class="btn btn-default">Import Swagger</button>
@@ -224,7 +272,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum convallis
     <div class="tab-pane" id="documents-r">Documents.</div>
     <div class="tab-pane" id="actrl-r">Access Controle.</div>
     <div class="tab-pane" id="sequences-r">Mediation.</div>
-    <div class="tab-pane" id="scripting-r">Settings Tab.</div>
+    <div class="tab-pane" id="scripting-r">
+      <table class="table table-bordered">
+        <tr>
+          <th style="width:200px">Resources</th>
+          <th>Script</th>
+        </tr>
+        <tr>
+          <td>
+
+          </td>
+          <td><div id="editor" class="col-md-12" style="height:600px"></div></td>        
+        <tr>
+      </table>      
+    </div>
 
   </div>
 </div>
@@ -275,6 +336,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum convallis
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    var editor = ace.edit("editor");
+    //editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
     </script>    
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
