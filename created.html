@@ -49,7 +49,7 @@
           <a class="navbar-brand" href="#"><img src="img/wso2-logo.png" class="logo" />API Publisher</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav  pull-right">
+          <ul class="nav navbar-nav  navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -73,31 +73,21 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">Browse</a>
-                </li>
-                <li>
-                    <a href="new.html">New API</a>
-                </li>
-                <li>
-                    <a href="#">Statistics</a>
-                </li>
-                <li>
-                    <a href="#">Subscriptions</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Tier Permissions</a>
-                </li>
-            </ul>
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+        <a href="index.html">
+            Home
+        </a>
+    </li>    
+    <li class="active"><a href="#overview-r" data-toggle="tab"><i class="fa fa-eye fa-lg"></i>&nbsp; Overview</a></li>
+    <li><a href="#lifecycle-r" data-toggle="tab"><i class="fa fa-circle-o-notch fa-lg"></i>&nbsp; Life-Cycle</a></li>
+    <li><a href="#endpoints-r" data-toggle="tab"><i class="fa fa-link fa-lg"></i>&nbsp; Endpoints</a></li>
+    <li><a href="#resources-r" data-toggle="tab"><i class="fa fa-align-justify fa-lg"></i>&nbsp; Resources</a></li>
+    <li><a href="#documents-r" data-toggle="tab"><i class="fa fa-files-o fa-lg"></i>&nbsp; Documents</a></li>    
+    <li><a href="#actrl-r" data-toggle="tab"><i class="fa fa-lock fa-lg"></i>&nbsp; Access Control</a></li> 
+    <li><a href="#sequences-r" data-toggle="tab"><i class="fa fa-code-fork fa-lg"></i>&nbsp; Mediation</a></li>
+    <li><a href="#scripting-r" data-toggle="tab"><i class="fa fa-code fa-lg"></i>&nbsp; Scripting</a></li>    
+  </ul>          
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -111,7 +101,7 @@
                       <h2>SampleAPI : /sample/1.0.0 </h2>
                       <strong style="color:#999">State : </strong><span class="label label-success">Created</span>
                     </div>                      
-<div class="col-xs-10">
+<div class="col-xs-12">
   <!-- Tab panes -->
   <div class="tab-content">
     <div class="tab-pane active" id="overview-r">
@@ -274,7 +264,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum convallis
 
     <div class="tab-pane" id="documents-r">Documents.</div>
     <div class="tab-pane" id="actrl-r">Access Controle.</div>
-    <div class="tab-pane" id="sequences-r">Mediation.</div>
+    <div class="tab-pane" id="sequences-r">
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-default active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> In Sequence
+  </label>
+  <label class="btn btn-default">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Out Sequence
+  </label>
+  <label class="btn btn-default">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Fault Sequence
+  </label>
+</div>
+<br /><br />
+      <div class="row">
+        <img src="img/flow.svg" class="col-xs-6">
+      </div>
+<br /><br />
+
+      <td><div id="editor2" class="col-md-12" style="height:600px"></div></td>        
+    </div>
     <div class="tab-pane" id="scripting-r">
       <table class="table table-bordered">
         <tr>
@@ -291,20 +300,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum convallis
     </div>
 
   </div>
-</div>
-
-<div class="col-xs-2"> <!-- required for floating -->
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs tabs-right">
-    <li class="active"><a href="#overview-r" data-toggle="tab"><i class="fa fa-eye fa-lg"></i>&nbsp; Overview</a></li>
-    <li><a href="#lifecycle-r" data-toggle="tab"><i class="fa fa-circle-o-notch fa-lg"></i>&nbsp; Life-Cycle</a></li>
-    <li><a href="#endpoints-r" data-toggle="tab"><i class="fa fa-link fa-lg"></i>&nbsp; Endpoints</a></li>
-    <li><a href="#resources-r" data-toggle="tab"><i class="fa fa-align-justify fa-lg"></i>&nbsp; Resources</a></li>
-    <li><a href="#documents-r" data-toggle="tab"><i class="fa fa-files-o fa-lg"></i>&nbsp; Documents</a></li>    
-    <li><a href="#actrl-r" data-toggle="tab"><i class="fa fa-lock fa-lg"></i>&nbsp; Access Control</a></li> 
-    <li><a href="#sequences-r" data-toggle="tab"><i class="fa fa-code-fork fa-lg"></i>&nbsp; Mediation Sequences</a></li>
-    <li><a href="#scripting-r" data-toggle="tab"><i class="fa fa-code fa-lg"></i>&nbsp; Scripting</a></li>    
-  </ul>
 </div>
                     </div>
                 </div>
@@ -342,6 +337,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum convallis
     var editor = ace.edit("editor");
     //editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/javascript");
+
+    var editor = ace.edit("editor2");
+    //editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/xml");    
     </script>    
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
