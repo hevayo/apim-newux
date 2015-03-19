@@ -79,14 +79,14 @@
             Home
         </a>
     </li>    
-    <li class="active"><a href="#overview-r" data-toggle="tab"><i class="fa fa-eye fa-lg"></i>&nbsp; Overview</a></li>
-    <li><a href="#lifecycle-r" data-toggle="tab"><i class="fa fa-circle-o-notch fa-lg"></i>&nbsp; Life-Cycle</a></li>
-    <li><a href="#endpoints-r" data-toggle="tab"><i class="fa fa-link fa-lg"></i>&nbsp; Endpoints</a></li>
-    <li><a href="#resources-r" data-toggle="tab"><i class="fa fa-align-justify fa-lg"></i>&nbsp; Resources</a></li>
-    <li><a href="#documents-r" data-toggle="tab"><i class="fa fa-files-o fa-lg"></i>&nbsp; Documents</a></li>    
-    <li><a href="#actrl-r" data-toggle="tab"><i class="fa fa-lock fa-lg"></i>&nbsp; Access Control</a></li> 
-    <li><a href="#sequences-r" data-toggle="tab"><i class="fa fa-code-fork fa-lg"></i>&nbsp; Mediation</a></li>
-    <li><a href="#scripting-r" data-toggle="tab"><i class="fa fa-code fa-lg"></i>&nbsp; Scripting</a></li>    
+    <li class="active"><a href="#overview-r" data-toggle="tab"><i class="fa fa-eye "></i>&nbsp; Overview</a></li>
+    <li><a href="#lifecycle-r" data-toggle="tab"><i class="fa fa-circle-o-notch "></i>&nbsp; Life-Cycle</a></li>
+    <li><a href="#endpoints-r" data-toggle="tab"><i class="fa fa-link "></i>&nbsp; Endpoints</a></li>
+    <li><a href="#resources-r" data-toggle="tab"><i class="fa fa-align-justify "></i>&nbsp; Resources</a></li>
+    <li><a href="#documents-r" data-toggle="tab"><i class="fa fa-files-o "></i>&nbsp; Documents</a></li>    
+    <li><a href="#actrl-r" data-toggle="tab"><i class="fa fa-lock "></i>&nbsp; Access Control</a></li> 
+    <li><a href="#sequences-r" data-toggle="tab"><i class="fa fa-code-fork "></i>&nbsp; Mediation</a></li>
+    <li><a href="#scripting-r" data-toggle="tab"><i class="fa fa-code "></i>&nbsp; Scripting</a></li>    
   </ul>          
         </div>
         <!-- /#sidebar-wrapper -->
@@ -262,8 +262,72 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum convallis
 </table>
 </div>
 
-    <div class="tab-pane" id="documents-r">Documents.</div>
-    <div class="tab-pane" id="actrl-r">Access Controle.</div>
+    <div class="tab-pane" id="documents-r">
+<div class="btn-group" role="group" aria-label="...">      
+      <button class="btn btn-primary" type="submit"><i class="fa fa-edit "></i> Add Document</button>
+      <button class="btn btn-default" type="submit"><i class="fa fa-remove"></i> Delete</button>
+</div> 
+    </div>
+    <div class="tab-pane" id="actrl-r">
+      <h4>Visibility</h4>
+<!-- Select Basic -->
+<div class="row">
+<div class="form-group">
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Public</option>
+      <option value="2">Private</option>
+    </select>
+  </div>
+</div>
+</div>      
+      <h4>Tiers</h4>
+<table class="table table-bordered col-md-4">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Rquests per hour</td>
+    </tr>
+  </thead>
+    <tr>
+      <td>Unlimited</td>
+      <td class="text-right">Unlimited</td>
+    </tr> 
+         <tr>
+      <td>Platinum</td>
+      <td class="text-right">1000</td>
+    </tr>
+    <tr>
+      <td>Gold</td>
+      <td class="text-right">100</td>
+    </tr>    
+</table>      
+      <h4>OAuth Scopes</h4>
+      <p>You can assign scope to resources in the resources tab.</p>
+<table class="table table-bordered col-md-4">
+  <thead>
+    <tr>
+      <td>Key</td>
+      <td>Name</td>
+      <td>Roles</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+    <tr>
+      <td>admin</td>
+      <td>Admin Scope</td>
+      <td>admin , something</td>      
+      <td>This is a description</td>
+    </tr> 
+    <tr>
+      <td>admin</td>
+      <td>Admin Scope</td>
+      <td>admin , something</td>      
+      <td>This is a description</td>
+    </tr>   
+</table>       
+    </div>
+
     <div class="tab-pane" id="sequences-r">
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-default active">
@@ -276,12 +340,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum convallis
     <input type="radio" name="options" id="option3" autocomplete="off"> Fault Sequence
   </label>
 </div>
-<br /><br />
       <div class="row">
-        <img src="img/flow.svg" class="col-xs-6">
+        <!-- img src="img/flow.svg" class="col-xs-6" -->
       </div>
-<br /><br />
-
+      <h3>In Sequence</h3>
       <td><div id="editor2" class="col-md-12" style="height:600px"></div></td>        
     </div>
     <div class="tab-pane" id="scripting-r">
